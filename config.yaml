@@ -7,10 +7,9 @@ repos:
   docs-chip:
     path: ../docs-chip
     langs: [en, zh]
-  # Uncomment once docs-product is available locally:
-  # docs-product:
-  #   path: ../docs-product
-  #   langs: [en, zh]
+  docs-product:
+    path: ../docs-product
+    langs: [en, zh]
 
 checks:
   descriptions: true
