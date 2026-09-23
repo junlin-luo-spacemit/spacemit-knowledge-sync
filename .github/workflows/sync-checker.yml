@@ -1,0 +1,97 @@
+name: Sync Checker
+
+on:
+  # Trigger from docs-chip and docs-product via repository_dispatch
+  repository_dispatch:
+    types: [docs-updated]
+  # Also allow manual runs
+  workflow_dispatch:
+    inputs:
+      repo_name:
+        description: "Source repo (docs-chip or docs-product)"
+        required: false
+        default: "docs-chip"
+      changed_files:
+        description: "Space-separated list of changed files (repo-relative)"
+        required: false
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out knowledge-sync repo
+        uses: actions/checkout@v4
+
+      - name: Check out docs-chip
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.DOCS_CHIP_REPO }}
+          path: ../docs-chip
+          token: ${{ secrets.DOCS_READ_TOKEN }}
+
+      # Uncomment when docs-product is available:
+      # - name: Check out docs-product
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: ${{ vars.DOCS_PRODUCT_REPO }}
+      #     path: ../docs-product
+      #     token: ${{ secrets.DOCS_READ_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run terminology lint
+        id: lint_terms
+        run: |
+          python scripts/lint_terms.py 2>&1 | tee /tmp/terms_output.txt
+          echo "exit_code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+
+      - name: Run description lint
+        id: lint_desc
+        run: |
+          python scripts/lint_descriptions.py 2>&1 | tee /tmp/desc_output.txt
+          echo "exit_code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+
+      - name: Post PR comment
+        if: github.event.client_payload.pr_number != ''
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.DOCS_WRITE_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const terms = fs.readFileSync('/tmp/terms_output.txt', 'utf8');
+            const desc  = fs.readFileSync('/tmp/desc_output.txt',  'utf8');
+            const repo  = context.payload.client_payload?.source_repo || 'unknown';
+            const pr    = context.payload.client_payload?.pr_number;
+
+            if (!pr) return;
+
+            const body = [
+              `## spacemit-knowledge-sync check`,
+              `Triggered by PR in **${repo}**.`,
+              '',
+              '### Terminology',
+              '```',
+              terms.trim() || 'No issues.',
+              '```',
+              '',
+              '### Descriptions',
+              '```',
+              desc.trim() || 'No issues.',
+              '```',
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.payload.client_payload.source_owner,
+              repo:  context.payload.client_payload.source_repo,
+              issue_number: Number(pr),
+              body,
+            });

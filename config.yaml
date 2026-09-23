@@ -1,0 +1,25 @@
+# spacemit-knowledge-sync — configuration
+#
+# Scans doc repos for terminology and description drift.
+# Paths are relative to this repo's root.
+
+repos:
+  docs-chip:
+    path: ../docs-chip
+    langs: [en, zh]
+  # Uncomment once docs-product is available locally:
+  # docs-product:
+  #   path: ../docs-product
+  #   langs: [en, zh]
+
+checks:
+  descriptions: true
+  terms: true
+
+# Files skipped by every check. Glob-ish, matched against the path
+# relative to the repo root.
+exclude:
+  - "**/index.md"
+  - "**/.git/**"
+  - "**/.venv/**"
+  - "**/node_modules/**"
