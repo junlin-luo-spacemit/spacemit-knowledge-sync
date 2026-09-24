@@ -1,0 +1,49 @@
+# K3 Peripherals Fragment Registry
+chip: K3
+subsystem: peripherals
+
+fragments:
+  uart_count:
+    canonical_en: 17 UART
+    canonical_zh: 17 UART
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  i2c_count:
+    canonical_en: 9 I2C
+    canonical_zh: 9 I2C
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  spi_count:
+    canonical_en: 6 SPI
+    canonical_zh: 6 SPI
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  espi_count:
+    canonical_en: 2 eSPI
+    canonical_zh: 2 eSPI
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  can_fd_count:
+    canonical_en: 10 CAN-FD
+    canonical_zh: 10 CAN-FD
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  pwm_count:
+    canonical_en: 30 PWM
+    canonical_zh: 30 PWM
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  ir_rx_count:
+    canonical_en: 4 IR-RX
+    canonical_zh: 4 IR-RX
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md

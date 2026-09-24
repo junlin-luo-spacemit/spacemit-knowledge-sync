@@ -1,0 +1,54 @@
+# K3 Storage and Audio Fragment Registry
+chip: K3
+subsystem: storage_audio
+
+fragments:
+  emmc_version:
+    canonical_en: eMMC 5.1
+    canonical_zh: eMMC 5.1
+    note: 8-bit, HS400 up to 400 MB/s
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  sdio_version:
+    canonical_en: SDIO 3.0 UHS-I
+    canonical_zh: SDIO 3.0
+    note: 4-bit, SDR104 up to 208 MHz
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  ufs_version:
+    canonical_en: UFS 2.2
+    canonical_zh: UFS 2.2
+    note: 2 TX + 2 RX lanes, HS-GEAR3/PWM-GEAR1
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  i2s_full_duplex:
+    canonical_en: 6x Full-Duplex I2S
+    canonical_zh: 6x I2S
+    note: 48 kHz, 16-bit, stereo
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  i2s_half_duplex:
+    canonical_en: 4x Half-Duplex I2S
+    canonical_zh: 4x Half-Duplex I2S
+    note: Supports TDM up to 4 channels
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  dp_audio:
+    canonical_en: 2x DP/eDP Audio
+    canonical_zh: 2x DP
+    note: Up to 192 kHz, 16/20/24-bit, stereo
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md

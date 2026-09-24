@@ -1,0 +1,35 @@
+# K3 Security Fragment Registry
+chip: K3
+subsystem: security
+
+fragments:
+  crypto_engine:
+    canonical_en: AES128/192/256, SHA1/224/256, RSA1024/2048/4096, ECC128/256/512, SM2/SM3/SM4
+    canonical_zh: AES, SHA, RSA, ECC, SM2/SM3/SM4
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  trng:
+    canonical_en: 32-bit TRNG
+    canonical_zh: TRNG
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  efuse:
+    canonical_en: 4096-bit eFuse
+    canonical_zh: 4096-bit eFuse
+    note: 16 banks x 256 bits, 256-bit user-customizable
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  iopmp:
+    canonical_en: 9 IOPMPs
+    canonical_zh: 9 IOPMP
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md

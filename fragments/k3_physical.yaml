@@ -1,0 +1,55 @@
+# K3 Physical Specs Fragment Registry
+chip: K3
+subsystem: physical
+
+fragments:
+  memory_type:
+    canonical_en: LPDDR5 6400 Mbps / LPDDR4x 4266 Mbps
+    canonical_zh: LPDDR5 / LPDDR4x
+    note: 64-bit total width, two 32-bit channels
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  memory_capacity:
+    canonical_en: up to 32 GB
+    canonical_zh: 32 GB
+    note: Peak bandwidth 51 GB/s
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  memory_bandwidth:
+    canonical_en: 51 GB/s
+    canonical_zh: 51 GB/s
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  tdp:
+    canonical_en: 15 W
+    canonical_zh: 15 W
+    note: Range 15-25 W
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  package:
+    canonical_en: FBGA 27x27 mm
+    canonical_zh: FBGA 27x27 mm
+    note: 0.65 mm pitch, 1563 balls (40x40 array)
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  operating_temp:
+    canonical_en: -40 to 85
+    canonical_zh: -40 to 85
+    note: Industrial grade, use degree U+00B0
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md

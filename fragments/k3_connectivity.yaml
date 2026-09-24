@@ -1,0 +1,57 @@
+# K3 Connectivity Fragment Registry
+chip: K3
+subsystem: connectivity
+
+fragments:
+  usb3_drd:
+    canonical_en: 1x USB 3.0 DRD with Type-C
+    canonical_zh: 1x USB 3.0 DRD
+    note: SuperSpeed 5 Gb/s
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+
+  usb3_host:
+    canonical_en: 3x USB 3.0 Host
+    canonical_zh: 3x USB 3.0
+    note: SuperSpeed 5 Gb/s, PHY shared with PCIe
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  usb2_host:
+    canonical_en: 1x USB 2.0 Host
+    canonical_zh: 1x USB 2.0
+    note: High-Speed 480 Mb/s
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  pcie_config:
+    canonical_en: 5 PCIe controllers
+    canonical_zh: 5 PCIe
+    note: PCIeA 8-lane, PCIeB/C 2-lane, PCIeD/E 1-lane, Gen3 8GT/s
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  pcie_gen:
+    canonical_en: PCIe Gen3
+    canonical_zh: PCIe Gen3
+    note: 8 GT/s per lane, 8-lane maximum
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md
+
+  ethernet_controllers:
+    canonical_en: 4x GMAC
+    canonical_zh: 4x GMAC
+    note: 10/100/1000 Mbps, MII/RMII/RGMII
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md

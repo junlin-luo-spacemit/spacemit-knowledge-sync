@@ -1,0 +1,57 @@
+# K3 Display and Video Fragment Registry
+chip: K3
+subsystem: display_video
+
+fragments:
+  display_max_resolution:
+    canonical_en: 3840x2160 at 60fps
+    canonical_zh: 3840x2160
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  mipi_dsi:
+    canonical_en: MIPI DSI v1.2
+    canonical_zh: MIPI DSI v1.2
+    note: Up to 8 data lanes, 4.5 Gbps per lane
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  dp_edp:
+    canonical_en: DP v1.2 / eDP v1.4
+    canonical_zh: DP v1.2
+    note: Up to 3840x2160 at 60fps or 2560x1440 at 144fps
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  video_encoder:
+    canonical_en: H.265/H.264/VP8/VP9 encoder 4K at 90fps
+    canonical_zh: H.265/H.264/VP8/VP9 4K
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  video_decoder:
+    canonical_en: H.265/H.264/VP8/VP9/VC-1/MPEG4/MPEG2/H.263 decoder 4K at 180fps
+    canonical_zh: 4K 180fps
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  mipi_csi:
+    canonical_en: 4x MIPI-CSI2 v1.1
+    canonical_zh: 4x MIPI-CSI2
+    note: Up to 4 lanes each, max 1.5 Gbps per lane, up to 12 camera inputs
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  camera_inputs:
+    canonical_en: 12 camera inputs
+    canonical_zh: 12 camera
+    note: Lane config 4+4+2+2
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
