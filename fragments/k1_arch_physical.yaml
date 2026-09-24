@@ -1,0 +1,114 @@
+# K1 Architecture and Physical Fragment Registry
+chip: K1
+subsystem: arch_physical
+
+fragments:
+  architecture_string:
+    canonical_en: RISC-V 64GCVB architecture and RVA22 standard
+    canonical_zh: RVA22
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  pipeline:
+    canonical_en: 8-stage dual-issue in-order pipeline
+    canonical_zh: 8-stage
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  vector_support:
+    canonical_en: 256-bit RVV1.0
+    canonical_zh: 256-bit RVV1.0
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  specint:
+    canonical_en: SPECint2006 > 4.0/GHz
+    canonical_zh: SPECint2006
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  llm_performance:
+    canonical_en: 10 Tokens/S @ 1B
+    canonical_zh: 10 Tokens/S
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  dvfs_voltage:
+    canonical_en: 0.6V to 1.05V
+    canonical_zh: 0.6V
+    note: DVFS adaptive operating voltage
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  tcm:
+    canonical_en: 512KB TCM
+    canonical_zh: 512KB TCM
+    note: Tight-Coupled Memory in Cluster 0 for AI extension
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  onchip_boot_rom:
+    canonical_en: 128KB boot-ROM
+    canonical_zh: 128KB
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  onchip_sram:
+    canonical_en: 256KB SRAM
+    canonical_zh: 256KB SRAM
+    note: Shared between Main CPU and RCPU
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  efuse:
+    canonical_en: Secure eFuse 4K bits
+    canonical_zh: 4K bits
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  trng:
+    canonical_en: TRNG
+    canonical_zh: TRNG
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  lpddr3_support:
+    canonical_en: LPDDR3 1866 Mbps
+    canonical_zh: LPDDR3
+    note: 32-bit, up to 4 GB
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  memory_bandwidth:
+    canonical_en: 10.6 GB/s
+    canonical_zh: 10.6 GB/s
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  consumer_temp:
+    canonical_en: -20 to 70
+    canonical_zh: -20
+    note: Consumer grade range
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  package_fccsp:
+    canonical_en: FCCSP 17x17mm 0.65mm pitch
+    canonical_zh: FCCSP 17x17mm
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  package_fcbga:
+    canonical_en: FCBGA 19x19mm 0.65mm pitch
+    canonical_zh: FCBGA 19x19mm
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md

@@ -1,0 +1,82 @@
+# K3 Architecture Fragment Registry
+chip: K3
+subsystem: arch
+
+fragments:
+  architecture_string:
+    canonical_en: RISC-V RVA23
+    canonical_zh: RVA23
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md
+
+  x100_pipeline:
+    canonical_en: quad-issue out-of-order
+    canonical_zh: quad-issue
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+
+  a100_data_formats:
+    canonical_en: BF16, FP16, FP8, INT8, INT4
+    canonical_zh: BF16, FP16
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_com260/root_overview.md
+      - docs-product/zh/k3_com260/root_overview.md
+
+  llm_performance:
+    canonical_en: 10 tokens/s at 30B
+    canonical_zh: 10 Tokens/s
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  onchip_boot_rom:
+    canonical_en: 128 KB Boot ROM
+    canonical_zh: 128 KB Boot ROM
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  onchip_sram:
+    canonical_en: 512 KB SRAM
+    canonical_zh: 512 KB SRAM
+    note: Shared by main CPU and RCPU
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  rcpu_isa:
+    canonical_en: RV64IMAFDC
+    canonical_zh: RV64IMAFDC
+    note: RT24 RCPU instruction set, also written RV64GC
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  x100_pmp:
+    canonical_en: 16 PMP entries
+    canonical_zh: 16 PMP
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  a100_pmp:
+    canonical_en: 32 PMP entries
+    canonical_zh: 32 PMP
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+
+  display_layers:
+    canonical_en: up to 4 full-size layer composers
+    canonical_zh: 4 layer
+    note: Maximum 16 via up-down layer reuse
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md

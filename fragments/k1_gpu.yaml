@@ -1,0 +1,40 @@
+# K1 GPU Fragment Registry
+chip: K1
+subsystem: gpu
+
+fragments:
+  gpu_model:
+    canonical_en: IMG BXE-2-32
+    canonical_zh: IMG BXE-2-32
+    note: 819 MHz, 32KB SLC
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  gpu_apis:
+    canonical_en: OpenCL 3.0 / OpenGL ES 3.2 / Vulkan 1.3
+    canonical_zh: OpenCL 3.0
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  gpu_virtual_instances:
+    canonical_en: up to 8 virtual GPUs
+    canonical_zh: 8 virtual
+    note: IMG hyperlane technology with 8 hyperlanes
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  v2d_max_resolution:
+    canonical_en: 4656x3596
+    canonical_zh: 4656
+    note: Max NV12 resolution for V2D 2D accelerator
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  v2d_scale:
+    canonical_en: upscaling up to 8x
+    canonical_zh: 8x
+    note: Downscaling to 1/8x, rotation 0/90/180/270 plus mirror/flip
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md

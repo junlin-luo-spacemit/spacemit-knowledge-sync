@@ -1,0 +1,50 @@
+# K3 GPU Fragment Registry
+chip: K3
+subsystem: gpu
+
+fragments:
+  gpu_apis:
+    canonical_en: OpenGL ES 1.1 / 3.2 / OpenCL 3.0 / Vulkan 1.3
+    canonical_zh: OpenCL 3.0
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  gpu_slc:
+    canonical_en: 128KB system-level cache (SLC)
+    canonical_zh: 128KB SLC
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  gpu_virtual_instances:
+    canonical_en: up to 8 virtual GPU instances
+    canonical_zh: 8 virtual
+    note: Up to 8 independent lanes
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  v2d_max_resolution:
+    canonical_en: 4096x2160
+    canonical_zh: 4096
+    note: Max resolution for V2D 2D accelerator
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  v2d_scale:
+    canonical_en: upscaling up to 8x
+    canonical_zh: 8x
+    note: Downscaling to 1/8x
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  vpu_clock:
+    canonical_en: up to 1 GHz
+    canonical_zh: 1 GHz
+    note: VPU operating frequency
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
