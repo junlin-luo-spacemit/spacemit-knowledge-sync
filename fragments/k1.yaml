@@ -1,0 +1,151 @@
+# K1 Content Fragment Registry
+# Tracks canonical chip specs and every location where they're reused across docs-chip and docs-product
+
+chip: K1
+family: Key Stone
+
+fragments:
+  # Core processor description
+  processor_name:
+    canonical: "SpacemiT K1"
+    note: "Official chip name. NOT 'SpacemiT M1' �?M1 was a development codename that leaked into product docs."
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+      - docs-product/en/k1_muse_paper/root_overview.md
+      - docs-product/zh/k1_muse_paper/root_overview.md
+      # Note: Many product files still incorrectly say "SpacemiT M1" �?tracked in backlog
+
+  core_count:
+    canonical_en: "8-core"
+    canonical_zh: "8�? 
+    note: "Dual-cluster architecture: 4+4 cores"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+      - docs-product/en/k1_muse_pi/root_overview.md
+      - docs-product/en/k1_muse_book/root_overview.md
+      - docs-product/en/k1_muse_box/root_overview.md
+      - docs-product/en/k1_muse_card/root_overview.md
+      - docs-product/en/k1_muse_paper/root_overview.md
+      - docs-product/en/k1_muse_shelf/root_overview.md
+      - docs-product/zh/k1_muse_pi/root_overview.md
+      - docs-product/zh/k1_muse_book/root_overview.md
+      - docs-product/zh/k1_muse_box/root_overview.md
+      - docs-product/zh/k1_muse_card/root_overview.md
+      - docs-product/zh/k1_muse_paper/root_overview.md
+      - docs-product/zh/k1_muse_shelf/root_overview.md
+
+  ai_compute:
+    canonical_en: "2.0 TOPS"
+    canonical_zh: "2.0 TOPS"
+    note: "Always include the '.0'. Forbidden variants: '2 TOPS', '2T', '2.0Tops'"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+      - docs-product/en/k1_muse_pi/root_overview.md
+      - docs-product/en/k1_muse_pi/root_overview.md
+      - docs-product/en/k1_muse_book/root_overview.md
+      - docs-product/en/k1_muse_book/root_overview.md
+      - docs-product/en/k1_muse_box/root_overview.md
+      - docs-product/en/k1_muse_box/root_overview.md
+      - docs-product/en/k1_muse_card/root_overview.md
+      - docs-product/en/k1_muse_card/root_overview.md
+      - docs-product/en/k1_muse_paper/root_overview.md
+      - docs-product/en/k1_muse_paper/root_overview.md
+      - docs-product/en/k1_muse_shelf/root_overview.md
+      - docs-product/en/k1_muse_pi_pro/root_overview.md
+      - docs-product/en/k1_riscv_labkit/root_overview.md
+      - docs-product/zh/k1_muse_pi/root_overview.md
+      - docs-product/zh/k1_muse_pi/root_overview.md
+      - docs-product/zh/k1_muse_book/root_overview.md
+      - docs-product/zh/k1_muse_book/root_overview.md
+      - docs-product/zh/k1_muse_box/root_overview.md
+      - docs-product/zh/k1_muse_box/root_overview.md
+      - docs-product/zh/k1_muse_card/root_overview.md
+      - docs-product/zh/k1_muse_card/root_overview.md
+      - docs-product/zh/k1_muse_paper/root_overview.md
+      - docs-product/zh/k1_muse_paper/root_overview.md
+      - docs-product/zh/k1_muse_shelf/root_overview.md
+      - docs-product/zh/k1_muse_pi_pro/root_overview.md
+      - docs-product/zh/k1_riscv_labkit/root_overview.md
+
+  cpu_performance:
+    canonical_en: "50 KDMIPS"
+    canonical_zh: "50 KDMIPS"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  memory_type:
+    canonical_en: "LPDDR4/LPDDR4X"
+    canonical_zh: "LPDDR4/LPDDR4X"
+    note: "32-bit interface, 2666 Mbps"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+
+  memory_capacity:
+    canonical_en: "up to 16 GB"
+    canonical_zh: "最�?16 GB"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+
+  l1_cache:
+    canonical_en: "32K per core"
+    canonical_zh: "每核 32 KB"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+
+  l2_cache:
+    canonical_en: "1MB shared across 8 cores (512K per cluster)"
+    canonical_zh: "八核共享 1MB L2 Cache（每�?512 KB�?
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  tcm:
+    canonical_en: "512KB"
+    canonical_zh: "512 KB"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+
+  vector_width:
+    canonical_en: "256-bit"
+    canonical_zh: "256 �?
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+
+  operating_temp:
+    canonical_en: "-40°C to 85°C"
+    canonical_zh: "-40°C�?5°C"
+    note: "Use ° (U+00B0), not �?(U+2103) or ˚ (U+02DA)"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md
+
+  tdp:
+    canonical_en: "3�? W"
+    canonical_zh: "3�?W"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  package:
+    canonical_en: "FCCSP 17×17 mm / FCBGA 19×19 mm, 0.65 mm pitch"
+    canonical_zh: "FCCSP 17×17 mm / FCBGA 19×19 mm�?.65 mm 球距"
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/zh/key_stone/k1/k1_docs/k1_ds.md

@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import fnmatch
+import re
 import sys
 from pathlib import Path
 
@@ -21,6 +22,10 @@ try:
     import yaml
 except ImportError:
     sys.exit("PyYAML is required: pip install -r requirements.txt")
+
+import sys
+if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf-8-sig"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config.yaml"
@@ -77,10 +82,21 @@ def scan(repo_name: str, repo_cfg: dict, glossary: list[dict],
             continue
 
         for lineno, line in enumerate(lines, start=1):
-            # Skip code block content — we only lint prose
             stripped = line.strip()
+            # Skip code blocks and indented code
             if stripped.startswith("```") or stripped.startswith("    "):
                 continue
+            # Skip lines that are pure URLs or Markdown link syntax
+            if re.search(r'^\[.*\]\(.*\)$', stripped) or stripped.startswith("http"):
+                continue
+            
+            # Strip inline code spans, URLs, and Markdown links before checking
+            clean_line = re.sub(r'`[^`]+`', '', line)
+            clean_line = re.sub(r'https?://[^\s]+', '', clean_line)
+            clean_line = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', clean_line)
+            # Strip signal/pin identifiers like I2C0_SDA, CAM_I2C0_SCL, GPIO[3]_50
+            clean_line = re.sub(r'\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b', '', clean_line)
+            clean_line = re.sub(r'\bGPIO\[\d+\]_\d+', '', clean_line)
 
             for entry in glossary:
                 scope = entry.get("scope", "both")

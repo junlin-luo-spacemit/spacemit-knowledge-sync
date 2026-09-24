@@ -1,0 +1,132 @@
+# K3 Content Fragment Registry
+# Tracks canonical chip specs and every location where they're reused across docs-chip and docs-product
+
+chip: K3
+family: Key Stone
+
+fragments:
+  processor_name:
+    canonical: "SpacemiT K3"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/en/k3_com260/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md
+      - docs-product/zh/k3_com260/root_overview.md
+
+  cpu_core_name:
+    canonical: "X100"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/en/k3_com260/root_overview.md
+      - docs-product/en/k3_shelf/root_overview.md
+      - docs-product/en/k3_rv2768/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md
+      - docs-product/zh/k3_com260/root_overview.md
+      - docs-product/zh/k3_shelf/root_overview.md
+      - docs-product/zh/k3_rv2768/root_overview.md
+
+  ai_core_name:
+    canonical: "A100"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-product/en/k3_com260/root_overview.md
+      - docs-product/zh/k3_com260/root_overview.md
+
+  core_count:
+    canonical_en: "8 X100 cores + 8 A100 AI cores"
+    canonical_zh: "8 �?X100 大核 + 8 �?A100 AI �?
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+
+  cpu_freq:
+    canonical_en: "up to 2.4 GHz"
+    canonical_zh: "最大主�?2.4 GHz"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/en/k3_shelf/root_overview.md
+      - docs-product/en/k3_rv2768/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md
+      - docs-product/zh/k3_shelf/root_overview.md
+      - docs-product/zh/k3_rv2768/root_overview.md
+
+  ai_compute:
+    canonical_en: "60 TOPS"
+    canonical_zh: "60 TOPS"
+    note: "No space variant allowed: '60TOPS' is forbidden"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/en/k3_com260/root_overview.md
+      - docs-product/en/k3_com260/root_overview.md
+      - docs-product/en/k3_shelf/root_overview.md
+      - docs-product/en/k3_rv2768/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md
+      - docs-product/zh/k3_com260/root_overview.md
+      - docs-product/zh/k3_com260/root_overview.md
+      - docs-product/zh/k3_shelf/root_overview.md
+      - docs-product/zh/k3_rv2768/root_overview.md
+
+  cpu_performance:
+    canonical_en: "130 KDMIPS"
+    canonical_zh: "130 KDMIPS"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_com260/root_overview.md
+      - docs-product/zh/k3_com260/root_overview.md
+
+  model_size:
+    canonical_en: "30B"
+    canonical_zh: "30B"
+    note: "Forbidden variants: '300 �?, '300�?, '30 billion'"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/root_overview.md
+      - docs-chip/zh/key_stone/k3/k3_docs/root_overview.md
+      - docs-product/en/k3_pico/root_overview.md
+      - docs-product/en/k3_com260/root_overview.md
+      - docs-product/zh/k3_pico/root_overview.md
+      - docs-product/zh/k3_com260/root_overview.md
+
+  specint:
+    canonical_en: "SPECint2006 > 9.0/GHz"
+    canonical_zh: "单核 SPECint2006 > 9.0/GHz"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+      - docs-product/en/k3_rv2768/root_overview.md
+      - docs-product/zh/k3_rv2768/root_overview.md
+
+  memory_type:
+    canonical_en: "LPDDR5 (6400 Mbps) / LPDDR4x (4266 Mbps)"
+    canonical_zh: "LPDDR5�?400 Mbps�? LPDDR4x�?266 Mbps�?
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md
+
+  memory_capacity:
+    canonical_en: "up to 32 GB"
+    canonical_zh: "最�?32 GB"
+    used_in:
+      - docs-chip/en/key_stone/k3/k3_docs/k3_ds.md
+      - docs-chip/zh/key_stone/k3/k3_docs/k3_ds.md

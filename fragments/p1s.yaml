@@ -1,0 +1,70 @@
+# P1S Content Fragment Registry
+# Tracks canonical PMIC specs and every location where they're reused
+
+chip: P1S
+family: Power Stone
+
+fragments:
+  chip_description:
+    canonical_en: "multi-channel power management chip (PMIC)"
+    canonical_zh: "多通道电源管理芯片（PMIC�?
+    note: >-
+      en/root_overview.md says "high-performance multi-channel PMIC" but
+      zh/root_overview.md omits "high-performance". Tracked as known divergence.
+    used_in:
+      - docs-chip/en/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/root_overview.md
+
+  buck_count:
+    canonical_en: "6 COT buck converters"
+    canonical_zh: "6 �?COT 降压转换�?
+    used_in:
+      - docs-chip/en/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/en/power_stone/p1s/p1s_docs/p1s_ds.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/p1s_ds.md
+
+  ldo_count:
+    canonical_en: "12 LDO"
+    canonical_zh: "5 LDO"
+    conflict: true
+    note: >-
+      CONFLICT: en/root_overview.md says 12 LDO, zh/p1s_ds.md says 5 LDO.
+      Needs hardware team confirmation of which is correct.
+    used_in:
+      - docs-chip/en/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/p1s_ds.md
+
+  input_voltage:
+    canonical_en: "2.6 V to 5.5 V"
+    canonical_zh: "2.6 V �?5.5 V"
+    used_in:
+      - docs-chip/en/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/root_overview.md
+
+  package:
+    canonical_en: "QFN-60 (7 mm x 7 mm)"
+    canonical_zh: "QFN-60�? mm x 7 mm�?
+    note: "Forbidden: 7mmx7mm, 7mm x 7mm. en/root_overview.md has 7mmx7mm �?needs fix."
+    used_in:
+      - docs-chip/en/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/en/power_stone/p1s/p1s_docs/p1s_ds.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/p1s_ds.md
+
+  i2c_interface:
+    canonical_en: "I²C"
+    canonical_zh: "I²C"
+    note: "en/p1s_ds.md uses IIC �?needs fix."
+    used_in:
+      - docs-chip/en/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/en/power_stone/p1s/p1s_docs/p1s_ds.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/p1s_ds.md
+
+  operating_temp:
+    canonical_en: "-40°C to 85°C"
+    canonical_zh: "-40°C �?85°C"
+    used_in:
+      - docs-chip/en/power_stone/p1s/p1s_docs/root_overview.md
+      - docs-chip/zh/power_stone/p1s/p1s_docs/root_overview.md
