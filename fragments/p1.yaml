@@ -1,55 +1,34 @@
 # P1 Content Fragment Registry
-# Tracks canonical PMIC specs and every location where they're reused
-
 chip: P1
 family: Power Stone
 
 fragments:
   chip_description:
-    canonical_en: "high-performance multi-channel power management chip (PMIC)"
-    canonical_zh: "高性能多通道电源管理芯片（PMIC�?
+    canonical_en: high-performance multi-channel power management chip
+    canonical_zh: PMIC
     used_in:
       - docs-chip/en/power_stone/p1/p1_docs/root_overview.md
       - docs-chip/zh/power_stone/p1/p1_docs/root_overview.md
 
   buck_count:
-    canonical_en: "6 constant-on-time (COT) buck converters"
-    canonical_zh: "6 个恒定导通时间（COT）降压转换器"
+    canonical_en: 6
+    canonical_zh: 6
+    note: 6 COT buck converters
     used_in:
       - docs-chip/en/power_stone/p1/p1_docs/root_overview.md
       - docs-chip/zh/power_stone/p1/p1_docs/root_overview.md
-      - docs-chip/en/power_stone/p1/p1_docs/p1_ds.md
-      - docs-chip/zh/power_stone/p1/p1_docs/p1_ds.md
 
   ldo_count:
-    canonical_en: "12 LDO"
-    canonical_zh: "12 LDO"
-    used_in:
-      - docs-chip/en/power_stone/p1/p1_docs/root_overview.md
-      - docs-chip/zh/power_stone/p1/p1_docs/root_overview.md
-      - docs-chip/en/power_stone/p1/p1_docs/p1_ds.md
-      - docs-chip/zh/power_stone/p1/p1_docs/p1_ds.md
-
-  input_voltage:
-    canonical_en: "2.6 V to 5.5 V"
-    canonical_zh: "2.6 V �?5.5 V"
+    canonical_en: 12 LDO
+    canonical_zh: 12 LDO
     used_in:
       - docs-chip/en/power_stone/p1/p1_docs/root_overview.md
       - docs-chip/zh/power_stone/p1/p1_docs/root_overview.md
 
   package:
-    canonical_en: "QFN-60 (7 mm x 7 mm)"
-    canonical_zh: "QFN-60�? mm x 7 mm�?
-    note: "Forbidden: 7mmx7mm, 7mm x 7mm, 7 mm × 7 mm"
-    used_in:
-      - docs-chip/en/power_stone/p1/p1_docs/root_overview.md
-      - docs-chip/zh/power_stone/p1/p1_docs/root_overview.md
-      - docs-chip/en/power_stone/p1/p1_docs/p1_ds.md
-      - docs-chip/zh/power_stone/p1/p1_docs/p1_ds.md
-
-  operating_temp:
-    canonical_en: "-40°C to 85°C"
-    canonical_zh: "-40°C �?85°C"
+    canonical_en: QFN-60
+    canonical_zh: QFN-60
+    note: Dimensions 7 mm x 7 mm. Forbidden - 7mmx7mm without spaces
     used_in:
       - docs-chip/en/power_stone/p1/p1_docs/root_overview.md
       - docs-chip/zh/power_stone/p1/p1_docs/root_overview.md
