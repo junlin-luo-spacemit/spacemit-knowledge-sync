@@ -1,0 +1,70 @@
+# K1 Display and Video Fragment Registry
+# Display outputs, video codec, camera/ISP specs
+
+chip: K1
+subsystem: display_video
+
+fragments:
+  display_outputs:
+    canonical_en: dual displays
+    canonical_zh: dual displays
+    note: Independent output up to 1920x1440 at 60fps
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  hdmi_version:
+    canonical_en: HDMI 1.4
+    canonical_zh: HDMI 1.4
+    note: Up to 1920x1440 at 60Hz
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  mipi_dsi:
+    canonical_en: 1 MIPI DSI-4 lane
+    canonical_zh: 1 MIPI DSI-4 lane
+    note: Up to 1200Mbps per lane
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  video_encoder:
+    canonical_en: H.265/H.264/VP8/VP9 encoder 4K at 30fps
+    canonical_zh: H.265/H.264/VP8/VP9 encoder 4K at 30fps
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  video_decoder:
+    canonical_en: H.265/H.264/VP8/VP9/MPEG4/MPEG2 decoder 4K at 60fps
+    canonical_zh: H.265/H.264/VP8/VP9/MPEG4/MPEG2 decoder 4K at 60fps
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  isp_config:
+    canonical_en: Dual-ISP
+    canonical_zh: Dual-ISP
+    note: 16M max 30fps per ISP
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  camera_input:
+    canonical_en: triple camera input
+    canonical_zh: triple camera input
+    note: Single camera up to 16MP, MIPI-CSI 8 Lanes (4+4 or 4+2+2)
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+      - docs-chip/zh/key_stone/k1/k1_docs/root_overview.md
+
+  mipi_csi_lanes:
+    canonical_en: MIPI CSI 4-Lane x2
+    canonical_zh: MIPI CSI 4-Lane x2
+    note: Supports 4+4, 4+2, or 4+2+2 mode
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  jpeg_encoder:
+    canonical_en: Hardware JPEG encoder
+    canonical_zh: Hardware JPEG encoder
+    note: Up to 23M
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md

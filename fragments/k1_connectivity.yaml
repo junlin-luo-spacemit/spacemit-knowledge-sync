@@ -1,0 +1,50 @@
+# K1 Connectivity Fragment Registry
+# USB, PCIe, Ethernet, wireless interfaces
+
+chip: K1
+subsystem: connectivity
+
+fragments:
+  usb3_host:
+    canonical_en: 1x USB 3.0
+    canonical_zh: 1x USB 3.0
+    note: Combo with PCIe 2.1 x1
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  usb2_interfaces:
+    canonical_en: 2x USB 2.0
+    canonical_zh: 2x USB 2.0
+    note: OTG + Host
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  pcie_config:
+    canonical_en: 5x PCIe 2.1
+    canonical_zh: 5x PCIe 2.1
+    note: x2 + x2 + x1 configuration, 5Gbps per lane
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  pcie_ports:
+    canonical_en: PCIE x3
+    canonical_zh: PCIE x3
+    note: PortA Gen2x1, PortB Gen2x2, PortC Gen2x2
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  ethernet_controllers:
+    canonical_en: 2x Ethernet RGMII
+    canonical_zh: 2x Ethernet RGMII
+    note: 10/100/1000 Mbps
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  wifi_bluetooth:
+    canonical_en: SDIO 3.0 Wi-Fi/BT
+    canonical_zh: SDIO 3.0 Wi-Fi/BT
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md

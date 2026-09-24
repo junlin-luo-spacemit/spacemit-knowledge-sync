@@ -105,7 +105,10 @@ def check_fragment(frag_name: str, frag: dict, config: dict,
             if not canonical:
                 continue
 
-            if canonical not in content:
+            # Convert to string for text search
+            canonical_str = str(canonical)
+            
+            if canonical_str not in content:
                 findings.append(
                     f"DRIFT  {frag_name}/{key} ({lang}): "
                     f"expected '{canonical}' not found\n"

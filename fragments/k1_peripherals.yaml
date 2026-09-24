@@ -1,0 +1,60 @@
+# K1 Peripherals Fragment Registry
+# Detailed peripheral interface specs
+
+chip: K1
+subsystem: peripherals
+
+fragments:
+  uart_interfaces:
+    canonical_en: 8 UART
+    canonical_zh: 8 UART
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  i2c_channels:
+    canonical_en: 8 I2C
+    canonical_zh: 8 I2C
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  spi_channels:
+    canonical_en: 4 SPI
+    canonical_zh: 4 SPI
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  gpio_count:
+    canonical_en: 128 GPIO
+    canonical_zh: 128 GPIO
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  pwm_channels:
+    canonical_en: 16 PWM
+    canonical_zh: 16 PWM
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  can_controllers:
+    canonical_en: 2 CAN-FD
+    canonical_zh: 2 CAN-FD
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  timer_count:
+    canonical_en: 8 Timers
+    canonical_zh: 8 Timers
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  watchdog_count:
+    canonical_en: 2 Watchdog
+    canonical_zh: 2 Watchdog
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  rtc:
+    canonical_en: RTC
+    canonical_zh: RTC
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md

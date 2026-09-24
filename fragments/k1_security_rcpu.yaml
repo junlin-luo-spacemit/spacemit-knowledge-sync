@@ -1,0 +1,51 @@
+# K1 Security and RCPU Fragment Registry
+# Security features, RCPU subsystem
+
+chip: K1
+subsystem: security_rcpu
+
+fragments:
+  crypto_engine:
+    canonical_en: Crypto Engine
+    canonical_zh: Crypto Engine
+    note: AES-128/192/256, SHA-1/224/256/384/512, RSA-1024/2048/4096, ECC, SM2/SM3/SM4
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+
+  secure_boot:
+    canonical_en: Secure Boot
+    canonical_zh: Secure Boot
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  trustzone:
+    canonical_en: TrustZone
+    canonical_zh: TrustZone
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  pmp_support:
+    canonical_en: RISC-V PMP & ePMP
+    canonical_zh: RISC-V PMP & ePMP
+    note: Physical Memory Protection extensions
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  rcpu_core:
+    canonical_en: Arm Cortex-M0
+    canonical_zh: Arm Cortex-M0
+    note: 300 MHz, 160KB SRAM
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  rcpu_frequency:
+    canonical_en: 300 MHz
+    canonical_zh: 300 MHz
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  rcpu_sram:
+    canonical_en: 160KB SRAM
+    canonical_zh: 160KB SRAM
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md

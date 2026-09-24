@@ -1,0 +1,44 @@
+# K1 Storage and Audio Fragment Registry
+# Storage interfaces, audio codecs
+
+chip: K1
+subsystem: storage_audio
+
+fragments:
+  emmc_version:
+    canonical_en: eMMC 5.1
+    canonical_zh: eMMC 5.1
+    note: 8-bit up to HS400 (200MHz)
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  sdio_version:
+    canonical_en: SDIO 3.0
+    canonical_zh: SDIO 3.0
+    note: 4-bit UHS-I protocol up to SDR104 (208MHz)
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  spi_flash:
+    canonical_en: SPI flash
+    canonical_zh: SPI flash
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  i2s_interfaces:
+    canonical_en: 2x Full-Duplex I2S
+    canonical_zh: 2x Full-Duplex I2S
+    note: 48 kHz sample rate, 16-bit depth, 2 channels
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
+
+  hdmi_audio:
+    canonical_en: 1x HDMI Audio
+    canonical_zh: 1x HDMI Audio
+    note: 48 kHz sample rate, 16-bit depth, 2 channels
+    used_in:
+      - docs-chip/en/key_stone/k1/k1_docs/k1_ds.md
+      - docs-chip/en/key_stone/k1/k1_docs/root_overview.md
