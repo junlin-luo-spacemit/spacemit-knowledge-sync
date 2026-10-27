@@ -1,0 +1,111 @@
+# V100 Content Fragment Registry
+# Canonical chip specs and every downstream file that reuses them.
+# used_in: file paths only, no line numbers (lines shift too often).
+
+chip: V100
+family: Vital Stone
+
+fragments:
+  processor_name:
+    canonical_en: SpacemiT Vital Stone V100
+    canonical_zh: SpacemiT Vital Stone RISC-V 服务器级 CPU V100
+    note: >-
+      In product briefs the CPU is referenced as "SpacemiT V100"; the full
+      canonical name belongs in chip overview copy.
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+
+  core_count_total:
+    canonical_en: 46 RISC-V CPU cores
+    canonical_zh: 46 个RISC-V CPU 核
+    note: >-
+      Chip-level total. Product briefs state "46 cores per processor" instead,
+      so they are not registered here.
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+
+  max_frequency:
+    canonical_en: 2.4 GHz
+    canonical_zh: 2.4GHz
+    note: >-
+      Kunminghu V2R2 runs at 2.1 GHz; 2.4 GHz belongs to the X100 cores.
+      Chip overview zh uses the unspaced 2.4GHz form; product briefs use
+      "2.4 GHz". Registered separately in v100_server_products.yaml.
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+
+  memory_bandwidth:
+    canonical_en: 307 GB/s
+    canonical_zh: 307 GB/s
+    note: Peak bandwidth for the 8-channel DDR5 controller.
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+      - docs-product/en/v100_series/v100_s5236/root_overview.md
+      - docs-product/zh/v100_series/v100_s5236/root_overview.md
+
+  memory_speed:
+    canonical_en: 4800 MT/s
+    canonical_zh: 4800 MT/s
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+      - docs-product/en/v100_series/v100_g5201/root_overview.md
+      - docs-product/zh/v100_series/v100_g5201/root_overview.md
+      - docs-product/en/v100_series/v100_s5236/root_overview.md
+      - docs-product/zh/v100_series/v100_s5236/root_overview.md
+
+  memory_capacity:
+    canonical_en: 2 TB
+    canonical_zh: 2TB
+    note: >-
+      Chip-level maximum is 2 TB across 8 channels; per-DIMM maximum is 256 GB.
+      zh chip overview writes 2TB without a space. Product briefs write "2 TB"
+      and are registered in v100_server_products.yaml.
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+
+  pcie_generation:
+    canonical_en: PCIe 5.0
+    canonical_zh: PCIe 5.0
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+      - docs-product/en/v100_series/v100_s5236/root_overview.md
+      - docs-product/zh/v100_series/v100_s5236/root_overview.md
+
+  tdp:
+    canonical_en: 120W
+    canonical_zh: 120W
+    note: Chip TDP. Server chassis power supplies are specified separately.
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+
+  package_size:
+    canonical_en: 58.5 mm × 75.4 mm
+    canonical_zh: 58.5 mm × 75.4 mm
+    note: FCBGA, 0.94 mm pitch.
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md
+
+  operating_temperature:
+    canonical_en: 0 ~ 40°C
+    canonical_zh: 0 ~ 40°C
+    note: >-
+      Degree sign must be ° (U+00B0). Product briefs render this as 0°C ~ 40°C
+      or 0℃～40℃; the chip overview uses the range form.
+    used_in:
+      - docs-chip/en/vital_stone/v100/v100_docs/root_overview.md
+      - docs-chip/zh/vital_stone/v100/v100_docs/root_overview.md

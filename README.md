@@ -174,3 +174,22 @@ must decide.
 - `p1s.yaml` — P1S PMIC (6 buck + LDO conflict flagged)
 - `muse_pi.yaml` — MUSE Pi product (K1-based)
 - `k3_products.yaml` — K3 Pico, CoM260, RV2768 (K3-based)
+- `v100.yaml` — V100 server CPU (46 cores, 6×Kunminghu V2R2 + 40×X100, PCIe 5.0, DDR5)
+- `v100_products.yaml` — C2201, G5201, S5236 V100-based servers
+
+## Tracked fragment registries
+
+- `fragments/k1*.yaml` — K1 chip and subsystem facts
+- `fragments/k3*.yaml` — K3 chip and subsystem facts
+- `fragments/p1.yaml`, `fragments/p1s.yaml` — PMIC facts
+- `fragments/v100.yaml` — V100 chip-level facts (cores, memory, PCIe, TDP, package)
+- `fragments/v100_server_products.yaml` — C2201/G5201/S5236 chassis facts
+
+### Chip vs. product scoping
+
+Chip facts and chassis facts are registered separately because the same value can
+legitimately differ between them. For example, the V100 chip exposes 52 PCIe 5.0
+lanes while the C2201 chassis provides 88. Registering both under one fragment
+would force a false conflict. Likewise, the zh chip overview writes `2.4GHz`
+and `2TB` without a space, while the zh product briefs write `2.4 GHz` and
+`2 TB`.

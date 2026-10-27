@@ -1,0 +1,103 @@
+# V100 Server Products Fragment Registry
+# Chassis-level facts for the C2201 / G5201 / S5236 systems.
+
+chip: V100
+subsystem: server_products
+
+fragments:
+  c2201_chassis:
+    canonical_en: 2U dual-socket rackmount server
+    canonical_zh: 2U 双路机架式服务器
+    used_in:
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+
+  product_max_frequency:
+    canonical_en: 2.4 GHz
+    canonical_zh: 2.4 GHz
+    note: >-
+      Chassis "up to 2.4 GHz" per processor. Product briefs use the spaced
+      "2.4 GHz"; the chip overview zh writes "2.4GHz".
+    used_in:
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+      - docs-product/en/v100_series/v100_g5201/root_overview.md
+      - docs-product/zh/v100_series/v100_g5201/root_overview.md
+      - docs-product/en/v100_series/v100_s5236/root_overview.md
+      - docs-product/zh/v100_series/v100_s5236/root_overview.md
+
+  product_memory_capacity:
+    canonical_en: 2 TB
+    canonical_zh: 2 TB
+    note: Chassis-level maximum across 16 DDR5 DIMM slots.
+    used_in:
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+      - docs-product/en/v100_series/v100_s5236/root_overview.md
+      - docs-product/zh/v100_series/v100_s5236/root_overview.md
+
+  c2201_total_cores:
+    canonical_en: 92 high-performance cores
+    canonical_zh: 92 个高性能核心
+    note: Two V100 processors at 46 cores each.
+    used_in:
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+
+  c2201_pcie_lanes:
+    canonical_en: 88 PCIe 5.0 lanes
+    canonical_zh: 88 条 PCIe 5.0 Lane
+    note: Chassis total; the V100 chip itself exposes 52 lanes.
+    used_in:
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+
+  g5201_chassis:
+    canonical_en: 4U high-density rackmount intelligent computing server
+    canonical_zh: 4U 高密度机架式智算服务器
+    used_in:
+      - docs-product/en/v100_series/v100_g5201/root_overview.md
+      - docs-product/zh/v100_series/v100_g5201/root_overview.md
+
+  g5201_gpu_capacity:
+    canonical_en: 8 × GPU cards rated at up to 600 W each
+    canonical_zh: 8 张 600 W GPU 卡
+    used_in:
+      - docs-product/en/v100_series/v100_g5201/root_overview.md
+      - docs-product/zh/v100_series/v100_g5201/root_overview.md
+
+  g5201_gpu_interconnect:
+    canonical_en: 256 GB/s
+    canonical_zh: 256 GB/s
+    used_in:
+      - docs-product/en/v100_series/v100_g5201/root_overview.md
+      - docs-product/zh/v100_series/v100_g5201/root_overview.md
+
+  s5236_chassis:
+    canonical_en: 4U high-density rackmount storage server
+    canonical_zh: 4U 高密度机架式存储服务器
+    used_in:
+      - docs-product/en/v100_series/v100_s5236/root_overview.md
+      - docs-product/zh/v100_series/v100_s5236/root_overview.md
+
+  s5236_drive_bays:
+    canonical_en: 36 drive bays
+    canonical_zh: 36 个硬盘槽位
+    note: 24 front 3.5-inch + 12 rear 3.5-inch SATA, plus 2 × 2.5-inch system drives.
+    used_in:
+      - docs-product/en/v100_series/v100_s5236/root_overview.md
+      - docs-product/zh/v100_series/v100_s5236/root_overview.md
+
+  product_operating_temperature:
+    canonical_en: 0°C ~ 40°C
+    canonical_zh: 0℃～40℃
+    note: >-
+      Chassis operating range. zh briefs use the full-width ～ and ℃
+      consistently; do not normalise to the chip overview form here.
+    used_in:
+      - docs-product/en/v100_series/v100_c2201/root_overview.md
+      - docs-product/zh/v100_series/v100_c2201/root_overview.md
+      - docs-product/en/v100_series/v100_g5201/root_overview.md
+      - docs-product/zh/v100_series/v100_g5201/root_overview.md
+      - docs-product/en/v100_series/v100_s5236/root_overview.md
+      - docs-product/zh/v100_series/v100_s5236/root_overview.md
