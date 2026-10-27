@@ -54,7 +54,15 @@ def find_open_issue(repository: str, token: str) -> dict | None:
     response = github_request(
         "GET", f"/repos/{repository}/issues", token, params={"state": "open", "per_page": 100}
     )
-    return next((issue for issue in response.json() if ISSUE_MARKER in issue.get("body", "")), None)
+    return next(
+        (
+            issue
+            for issue in response.json()
+            if ISSUE_MARKER in (issue.get("body") or "")
+            or issue.get("title") == ISSUE_TITLE
+        ),
+        None,
+    )
 
 
 def issue_body(check_output: str) -> str:
