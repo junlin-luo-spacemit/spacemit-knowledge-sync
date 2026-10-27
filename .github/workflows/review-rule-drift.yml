@@ -24,7 +24,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: spacemit-com/docs-chip
-          token: ${{ secrets.REVIEW_RULES_TOKEN }}
           sparse-checkout: .github/doc-review-agent
           path: consumers/docs-chip
 
@@ -32,7 +31,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: spacemit-com/docs-product
-          token: ${{ secrets.REVIEW_RULES_TOKEN }}
           sparse-checkout: .github/doc-review-agent
           path: consumers/docs-product
 

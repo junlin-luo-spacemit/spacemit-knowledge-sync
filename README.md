@@ -69,11 +69,13 @@ repositories without modifying either repository:
 - It does not infer, change, or approve product specifications. Add approved
   product facts to the canonical YAML files before synchronizing them.
 
-Before enabling the workflow, add a `REVIEW_RULES_TOKEN` Actions secret in this
-repository. It must be a fine-grained personal access token or GitHub App token
-with read access to `spacemit-com/docs-chip` and `spacemit-com/docs-product`.
+Before enabling the workflow, no additional secrets are required because
+`spacemit-com/docs-chip` and `spacemit-com/docs-product` are public repositories.
 The workflow uses its built-in `GITHUB_TOKEN` only to create or update the
-tracking issue in this repository.
+tracking issue in this repository. If either documentation repository becomes
+private in the future, add a `REVIEW_RULES_TOKEN` Actions secret — a
+fine-grained PAT with read-only **Contents** access to both repositories — and
+add `token: ${{ secrets.REVIEW_RULES_TOKEN }}` to both consumer checkout steps.
 
 ## Versioning and Rule Releases
 
