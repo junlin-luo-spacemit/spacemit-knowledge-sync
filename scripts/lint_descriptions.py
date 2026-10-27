@@ -15,9 +15,14 @@ from __future__ import annotations
 
 import argparse
 import fnmatch
+import io
 import re
 import sys
 from pathlib import Path
+
+# Force UTF-8 output on Windows to handle trademark symbols and Chinese characters
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 try:
     import yaml

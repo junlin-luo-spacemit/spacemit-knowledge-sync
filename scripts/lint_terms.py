@@ -18,14 +18,13 @@ import re
 import sys
 from pathlib import Path
 
+if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf-8-sig"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 try:
     import yaml
 except ImportError:
     sys.exit("PyYAML is required: pip install -r requirements.txt")
-
-import sys
-if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf-8-sig"):
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config.yaml"
@@ -108,7 +107,7 @@ def scan(repo_name: str, repo_cfg: dict, glossary: list[dict],
                 preferred = entry.get(lang) if lang == "zh" else entry.get("term")
 
                 for variant in forbidden:
-                    if variant in line:
+                    if variant in clean_line:
                         msg = (
                             f"TERM  '{variant}' → prefer '{preferred}'\n"
                             f"      at {repo_name}/{rel}:{lineno}\n"
