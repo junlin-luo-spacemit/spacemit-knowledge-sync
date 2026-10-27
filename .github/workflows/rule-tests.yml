@@ -1,0 +1,72 @@
+name: Rule Tests
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "scripts/**"
+      - "tests/**"
+      - "glossary.yaml"
+      - "entities/**"
+      - "fragments/**"
+      - "requirements.txt"
+      - ".github/workflows/rule-tests.yml"
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "tests/**"
+      - "glossary.yaml"
+      - "entities/**"
+      - "fragments/**"
+      - "requirements.txt"
+      - ".github/workflows/rule-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run rule regression and contract tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out canonical rules
+        uses: actions/checkout@v7
+        with:
+          path: spacemit-knowledge-sync
+
+      - name: Check out docs-chip for consumer contract tests
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/spacemit-com/docs-chip.git docs-chip
+          git -C docs-chip sparse-checkout set .github/doc-review-agent
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: spacemit-knowledge-sync/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r spacemit-knowledge-sync/requirements.txt
+
+      - name: Run tests
+        working-directory: spacemit-knowledge-sync
+        run: python -m unittest discover -s tests -v
+
+      - name: Verify canonical YAML parses
+        working-directory: spacemit-knowledge-sync
+        run: |
+          python - <<'PY'
+          import pathlib, sys, yaml
+          failed = False
+          for path in [pathlib.Path("glossary.yaml"), *sorted(pathlib.Path("entities").glob("*.yaml")), *sorted(pathlib.Path("fragments").glob("*.yaml"))]:
+              try:
+                  yaml.safe_load(path.read_text(encoding="utf-8"))
+              except Exception as exc:
+                  print(f"FAIL {path}: {exc}", file=sys.stderr)
+                  failed = True
+          sys.exit(1 if failed else 0)
+          PY
