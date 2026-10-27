@@ -21,18 +21,16 @@ jobs:
           path: spacemit-knowledge-sync
 
       - name: Check out docs-chip review rules
-        uses: actions/checkout@v4
-        with:
-          repository: spacemit-com/docs-chip
-          sparse-checkout: .github/doc-review-agent
-          path: consumers/docs-chip
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/spacemit-com/docs-chip.git consumers/docs-chip
+          git -C consumers/docs-chip sparse-checkout set .github/doc-review-agent
 
       - name: Check out docs-product review rules
-        uses: actions/checkout@v4
-        with:
-          repository: spacemit-com/docs-product
-          sparse-checkout: .github/doc-review-agent
-          path: consumers/docs-product
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/spacemit-com/docs-product.git consumers/docs-product
+          git -C consumers/docs-product sparse-checkout set .github/doc-review-agent
 
       - name: Set up Python
         uses: actions/setup-python@v5
