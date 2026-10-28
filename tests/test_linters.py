@@ -29,6 +29,7 @@ def load_script(name: str):
 
 lint_terms = load_script("lint_terms")
 lint_descriptions = load_script("lint_descriptions")
+lint_bilingual = load_script("lint_bilingual")
 
 
 class TermLinterTests(unittest.TestCase):
@@ -120,7 +121,44 @@ FIXTURE_ZH = (
 FIXTURE_REL = "zh/vital_stone/v100/v100_docs/root_overview.md"
 
 
-@unittest.skipUnless(CONSUMER_AVAILABLE, "docs-chip consumer agent not available")
+class BilingualLinterTests(unittest.TestCase):
+    def test_flags_missing_zh_counterpart(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            (root / "en").mkdir()
+            (root / "zh").mkdir()
+            (root / "en" / "overview.md").write_text("# Overview\n", encoding="utf-8")
+            config = {"repos": {"fixture": {"path": tmpdir, "langs": ["en", "zh"]}}}
+            findings, mzh, men = lint_bilingual.scan("fixture", config["repos"]["fixture"], False)
+            self.assertEqual(mzh, 1)
+            self.assertEqual(men, 0)
+            self.assertTrue(any("overview.md" in f for f in findings))
+
+    def test_no_findings_when_paired(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            (root / "en").mkdir()
+            (root / "zh").mkdir()
+            (root / "en" / "overview.md").write_text("# Overview\n", encoding="utf-8")
+            (root / "zh" / "overview.md").write_text("# 概述\n", encoding="utf-8")
+            config = {"repos": {"fixture": {"path": tmpdir, "langs": ["en", "zh"]}}}
+            findings, mzh, men = lint_bilingual.scan("fixture", config["repos"]["fixture"], False)
+            self.assertEqual(mzh, 0)
+            self.assertEqual(men, 0)
+
+    def test_en_only_exemption(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            (root / "en" / "usermanual").mkdir(parents=True)
+            (root / "zh").mkdir()
+            (root / "en" / "usermanual" / "ch01.md").write_text("# Ch1\n", encoding="utf-8")
+            cfg = {"path": tmpdir, "langs": ["en", "zh"], "en_only": ["usermanual/**"]}
+            findings, mzh, men = lint_bilingual.scan("fixture", cfg, False)
+            self.assertEqual(mzh, 0)
+            self.assertEqual(men, 0)
+
+
+
 class ConsumerContractTests(unittest.TestCase):
     """Verify canonical YAML is consumable by the docs-chip review agent.
 

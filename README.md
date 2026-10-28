@@ -11,9 +11,14 @@ form somewhere in the corpus. Fully deterministic grep, backed by
 [glossary.yaml](glossary.yaml).
 
 **Description drift** (`lint_descriptions.py`) — entities (K1, K3, P1, P1S,
-MUSE Pi, K3 products) described with values that contradict their canonical
-description, or with inconsistent phrasing across files. Backed by
+MUSE Pi, K3 products, V100) described with values that contradict their
+canonical description, or with inconsistent phrasing across files. Backed by
 [entities/](entities).
+
+**Translation gaps** (`lint_bilingual.py`) — an `en/` file with no matching
+`zh/` file, or the reverse. Paths intentionally published in one language only
+are declared under `en_only` / `zh_only` in [config.yaml](config.yaml) so they
+do not report as gaps.
 
 Each finding names `repo/file.md:line`, so the fix location is unambiguous.
 
@@ -32,6 +37,11 @@ python scripts/lint_terms.py --changed en/key_stone/k1/k1_docs/k1_ds.md
 # Single entity, or a single language tree
 python scripts/lint_descriptions.py --entity K1
 python scripts/lint_terms.py --lang zh
+
+# Check translation parity — each EN file must have a ZH counterpart
+python scripts/lint_bilingual.py
+python scripts/lint_bilingual.py --summary
+python scripts/lint_bilingual.py --repo docs-chip
 
 # Check whether the rule copies used by documentation PR reviewers match this repository
 python scripts/sync_review_rules.py
@@ -153,6 +163,7 @@ glossary.yaml            preferred terms + forbidden variants + unit conventions
 entities/*.yaml          canonical description + attributes per chip/product
 scripts/lint_terms.py    terminology checks
 scripts/lint_descriptions.py  entity description checks
+scripts/lint_bilingual.py     EN/ZH counterpart checks
 scripts/sync_review_rules.py  canonical rule synchronization/checks
 ```
 

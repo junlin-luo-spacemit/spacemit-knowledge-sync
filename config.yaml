@@ -7,6 +7,16 @@ repos:
   docs-chip:
     path: ../docs-chip
     langs: [en, zh]
+    # Paths intentionally published in one language only.
+    # Matched against the path relative to en/ or zh/ root.
+    en_only:
+      - "key_stone/k1/k1_docs/k1_usermanual/**"
+      - "key_stone/k3/k3_docs/k3_usermanual/**"
+      - "key_stone/k1/k1_hw/**"
+      - "key_stone/k3/k3_hw/**"
+      - "key_stone/k1/k1_sw/**"
+      - "key_stone/k3/k3_sw/**"
+      - "power_stone/p1/p1_hw/**"
   docs-product:
     path: ../docs-product
     langs: [en, zh]
@@ -14,6 +24,7 @@ repos:
 checks:
   descriptions: true
   terms: true
+  bilingual: true
 
 # Files skipped by every check. Glob-ish, matched against the path
 # relative to the repo root.
